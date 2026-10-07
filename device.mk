@@ -103,10 +103,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/component-overrides.xml:$(TARGET_COPY_OUT_VENDOR)/etc/sysconfig/component-overrides.xml
 
-# Configstore
-PRODUCT_PACKAGES += \
-    disable_configstore
-
 # Context Hub
 PRODUCT_PACKAGES += \
     android.hardware.contexthub@1.0-impl.generic \
@@ -179,6 +175,9 @@ SRC_MEDIA_HAL_DIR := hardware/qcom-caf/sdm845/media
 
 # Init
 $(call soong_config_set,libinit,vendor_init_lib,//$(LOCAL_PATH):libinit_RMX1971)
+
+# ION
+$(call soong_config_set_bool,libion,legacy_impl,true)
 
 # Input
 PRODUCT_COPY_FILES += \

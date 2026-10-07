@@ -11,10 +11,6 @@ $(call inherit-product, vendor/custom/config/common_full_phone.mk)
 # Inherit from RMX1971 device
 $(call inherit-product, $(LOCAL_PATH)/device.mk)
 
-# Official-ify
-DERPFEST_BUILD_TYPE := Official
-DERPFEST_BUILD_VARIANT := Stable
-TARGET_DISABLE_EPPE := true
 TARGET_SUPPORTS_BLUR := false
 
 PRODUCT_BRAND := realme
