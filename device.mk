@@ -111,12 +111,13 @@ PRODUCT_PACKAGES += \
 # Display
 PRODUCT_PACKAGES += \
     android.hardware.graphics.composer@2.3-service \
-    android.hardware.graphics.mapper@2.0-impl-qti-display \
+    android.hardware.graphics.mapper@3.0-impl-qti-display \
+    android.hardware.graphics.mapper@4.0-impl-qti-display \
     gralloc.sdm710 \
     hwcomposer.qcom \
     libvulkan \
     vendor.qti.hardware.memtrack-service \
-    vendor.qti.hardware.display.allocator@1.0-service
+    vendor.qti.hardware.display.allocator-service
 
 # Dexpreopt
 PRODUCT_DEX_PREOPT_DEFAULT_COMPILER_FILTER := verify
@@ -169,9 +170,9 @@ PRODUCT_BOARD_PLATFORM := sdm845
 PRODUCT_USES_QCOM_HARDWARE := true
 
 # HALS
-SRC_AUDIO_HAL_DIR := hardware/qcom-caf/sdm845/audio
-SRC_DISPLAY_HAL_DIR := hardware/qcom-caf/sdm845/display
-SRC_MEDIA_HAL_DIR := hardware/qcom-caf/sdm845/media
+SRC_AUDIO_HAL_DIR := hardware/qcom-caf/sdm660/audio
+SRC_DISPLAY_HAL_DIR := hardware/qcom-caf/sdm660/display
+SRC_MEDIA_HAL_DIR := hardware/qcom-caf/sdm660/media
 
 # Init
 $(call soong_config_set,libinit,vendor_init_lib,//$(LOCAL_PATH):libinit_RMX1971)
@@ -380,7 +381,7 @@ PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
     bootable/deprecated-ota \
     vendor/qcom/opensource/usb/etc \
-    hardware/qcom-caf/sdm845 \
+    hardware/qcom-caf/sdm660 \
     hardware/google/interfaces \
     hardware/google/pixel \
     hardware/lineage/interfaces/power-libperfmgr \
